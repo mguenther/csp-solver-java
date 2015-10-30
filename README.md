@@ -17,37 +17,37 @@ by Stuart Russell and Peter Norvig.
 The framework builds upon a set of a few abstractions. Class `CSP` is the abstract base class for all domain-specific
 CSPs. It provides the means to construct the initial assignment, which is comprised of all the `Variable`s of the CSP
 and their initial state. A variable can be either *assigned* or *unassigned*. In the first case, its domain has been
-reduced to a single fixed value, while in the latter case it has no assigned value, but a - possibly - reduced set
+reduced to a single fixed value, while in the latter case it has no assigned value, but a - possibly reduced - set
 of admissible domain values. Class `CSP` also provides the means to construct the full set of `Constraint`s for
 the CSP. A `Variable` of the CSP takes part in one or multiple `Constraint`s. A `Constraint` involves some subset
-of the variables of a CSP and specifices the allowable combinations of values for that subset. The `Constraint`
+of the variables of a CSP and specifies the allowable combinations of values for that subset. The `Constraint`
 class provides the means to determine whether a constraint is *consistent* and *satisfied* given the set of
 dependent variables.
 
 The current state of a CSP is represented using an `Assignment`. An assignment always contains the full set of
-variables of the CSP. An `Assignment` is partial, if it still contains `Variable`s that are unassigned. An assignment
+variables of the CSP. An `Assignment` is *partial*, if it still contains `Variable`s that are unassigned. An assignment
 that does not violate any constraints is called *consistent* or *legal*. A *complete* assignment is one in which
 every variable is assigned. A solution to the CSP is a *complete* assignment which does not violate any constraints.
 Class `Assignment` implements *forward checking*. This is a technique that eliminates the value assigned to a variable
 from all other variables that participate in the same `Constraint`s, thus further decreasing the search space of CSP.
 
-Class `DFSSolver` provides a generic way to operate on instances of `CSP`. It is able to apply heuristics for both
-variable ordering and value ordering that can dramatically decrease the search space. By default, it uses an uninformed
-approach that simply selects the next unassigned variable and the preserves the original ordering of domain values for 
-that variable. The `DFSSolver` progresses from `Assignment` to its successor until a complete assignment has been found
-or the search space is exhausted.
+Class `DFSSolver` provides a generic way to operate on instances of `CSP` using depth-first search. It is able to apply 
+heuristics for both variable ordering and value ordering that can dramatically decrease the search space. By default, it
+uses an uninformed approach that simply selects the next unassigned variable and the preserves the original ordering of 
+domain values for that variable. The `DFSSolver` progresses from `Assignment` to its successor until a complete 
+assignment has been found or the search space is exhausted.
 
 ## Constraints
 
-The framework currently only implements the `AllDiff` constraint which is satisfied if each of its variables is
+The framework currently only provides the `AllDiff` constraint. This constraint is satisfied if each of its variables is
 assigned to a different value.
 
 ## Variable Ordering
 
 The `DFSSolver` uses an uninformed approach by default which simply selects the next unassigned variable. However,
 it is also possible to use the `MinimumRemainingValue` heuristic, which selects the variable that is most constrained 
-given the current state of the CSP. Most constrained means that this variable has the fewest choices for domain
-values left. Using this heuristic can dramatically reduce the runtime of the solver, since the search space is pruned
+given the current state of the CSP. Thus, the variable that has the fewest choices for domain values left will be
+chosen. Using this heuristic can dramatically reduce the runtime of the solver, since the search space is pruned
 efficiently.
 
 ## Value Ordering
