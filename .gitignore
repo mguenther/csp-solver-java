@@ -1,0 +1,6 @@
+
+csp-sudoku/csp-sudoku.iml
+csp-core/csp-core.iml
+.idea
+csp-core/target
+csp-sudoku/target
