@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Each variable X_i in a CSP has a non-empty domain D_i of possible values. Variables can be part of
- * a partial assignment.
+ * Each variable X_i in a CSP has a non-empty domain D_i of possible values. Domain values are discrete and finite.
+ * Variables can be part of a partial assignment.
  *
  * This class is immutable.
  *
