@@ -4,8 +4,6 @@ import com.mgu.csp.AllDiff;
 import com.mgu.csp.Assignment;
 import com.mgu.csp.CSP;
 import com.mgu.csp.Constraint;
-import com.mgu.csp.DFSSolver;
-import com.mgu.csp.MinimumRemainingValue;
 import com.mgu.csp.Variable;
 import com.mgu.csp.VariableIdentity;
 
@@ -13,7 +11,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 
 import static com.mgu.csp.Variable.unassignedVariable;

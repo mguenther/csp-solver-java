@@ -21,7 +21,6 @@ public class VariableIdentity {
         VariableIdentity that = (VariableIdentity) o;
 
         return !(identity != null ? !identity.equals(that.identity) : that.identity != null);
-
     }
 
     @Override

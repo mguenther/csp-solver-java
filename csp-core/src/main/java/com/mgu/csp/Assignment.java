@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * A state of the CSP is defined by an assignment of values to some or all of the
  * variables. An assignment that does not violate any constraints is called a consistent
- * or legal assignment. A complete assignment is one in which every variable is mentioned.
+ * or legal assignment. A complete assignment is one in which every variable is assigned.
  * A solution to the CSP is a complete assignment which does not violate any constraints.
  *
  * This {@code Assignment} applies forward checking. Thus, whenever a {@code Variable} is
