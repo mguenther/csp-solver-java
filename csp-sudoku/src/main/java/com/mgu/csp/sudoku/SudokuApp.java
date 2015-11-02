@@ -25,7 +25,7 @@ public class SudokuApp {
         solver.addListener(state -> PrettyPrinter.printBoard(state));
         Optional<Assignment<Integer>> completeAssignment = solver.solve(new SudokuCSP(TEST));
         long end = System.nanoTime();
-        long duration = (end -start) / 1000000;
+        long duration = (end - start) / 1000000;
 
         completeAssignment.orElseThrow(() -> new RuntimeException("Found no solution."));
         completeAssignment.ifPresent(assignment -> {

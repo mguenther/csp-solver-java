@@ -114,8 +114,7 @@ public class Assignment<Type> {
     }
 
     /**
-     * Restricts the domain of the given variable by setting it to the provided {@code Set} of restricted
-     * domain values. This must be a subset of the set of admissible domain values for the variable.
+     * Restricts the domain of the given variable by removing the given value from its domain.
      *
      * Please note that any variable that has a restricted set of possible domain values and not a fixed assignment
      * is an unassigned variable.
@@ -151,19 +150,6 @@ public class Assignment<Type> {
                 .stream()
                 .filter(variable -> !variable.isAssigned())
                 .collect(Collectors.toSet()));
-    }
-
-    /**
-     * Determines whether the given variable is assigned.
-     *
-     * @param variableIdentity
-     *      Uniquely identifies a variable within the assignment
-     * @return
-     *      {@code true} if the variable has been assigned a value (restricted its domain
-     *      to a single value), {@code false} otherwise
-     */
-    public boolean isAssigned(final VariableIdentity variableIdentity) {
-        return this.variableAssignments.containsKey(variableIdentity) && this.variableAssignments.get(variableIdentity).isAssigned();
     }
 
     public Type valueOf(final VariableIdentity variableIdentity) {
