@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mguenther/csp-solver-java.svg?branch=master)](https://travis-ci.org/mguenther/csp-solver-java.svg)
+
 # Constraint Satisfaction Problem Solver
 
 This repository contains a tiny framework for solving constraint satisfaction problems (CSP) that have both
