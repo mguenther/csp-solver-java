@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/mguenther/csp-solver-java.svg?branch=master)](https://travis-ci.org/mguenther/csp-solver-java.svg)
-
 # Constraint Satisfaction Problem Solver
+
+[![Build Status](https://travis-ci.org/mguenther/csp-solver-java.svg?branch=master)](https://travis-ci.org/mguenther/csp-solver-java.svg)
 
 This repository contains a tiny framework for solving constraint satisfaction problems (CSP) that have both
 discrete and finite domains. Although this framework is fully functional, it is not meant to be production-ready,
